@@ -1,5 +1,6 @@
 call plug#begin()
 Plug 'mattn/emmet-vim'
+Plug 'mhinz/vim-startify'
 Plug 'honza/vim-snippets'
 "Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
@@ -15,15 +16,23 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'skywind3000/asyncrun.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'justinmk/vim-sneak'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'flazz/vim-colorschemes'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'francoiscabrol/ranger.vim'
 call plug#end()
 
-let mapleader = ","
+let g:mapleader = "\<space>"
+let g:maplocalleader = ','
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 let g:asyncrun_open = 6
 let g:user_emmet_leader_key = ','
 
@@ -31,13 +40,17 @@ map <leader>t :AsyncRun
 map <leader>T :AsyncStop<CR> 
 
 nnoremap <silent> <leader>z :Goyo<CR>
-nnoremap <silent> <Leader><Space> :Files<CR>
+nnoremap <silent> <leader>f :FZF<CR>
+nnoremap <silent> <leader>r :Ranger<CR>
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 
-au VimEnter *  NERDTree
+"au VimEnter *  NERDTree
 
 set number relativenumber
 set complete+=kspell
 set background=dark
+set timeoutlen=100
 
 augroup numbertoggle
   autocmd!
