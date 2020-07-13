@@ -26,31 +26,38 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'flazz/vim-colorschemes'
 Plug 'rbgrouleff/bclose.vim'
-Plug 'francoiscabrol/ranger.vim'
 call plug#end()
 
+set nu
 let g:mapleader = "\<space>"
-let g:maplocalleader = ','
-nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
-nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+"let g:maplocalleader = ','
 let g:asyncrun_open = 6
 let g:user_emmet_leader_key = ','
+let g:NERDTreeWinPos = "right"
+let g:airline_powerline_fonts = 1
 
 map <leader>t :AsyncRun
 map <leader>T :AsyncStop<CR> 
 
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+
 nnoremap <silent> <leader>z :Goyo<CR>
 nnoremap <silent> <leader>f :FZF<CR>
-nnoremap <silent> <leader>r :Ranger<CR>
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 
+nnoremap <silent> <C-j> :tabp<CR> 
+nnoremap <silent> <C-k> :tabn<CR> 
+nnoremap <silent> <C-h> :bnext<CR> 
+nnoremap <silent> <C-l> :bprevious<CR> 
+
+inoremap <C-s> <Esc>:Update<CR>
 "au VimEnter *  NERDTree
 
-set number relativenumber
 set complete+=kspell
 set background=dark
-set timeoutlen=100
+set timeoutlen=500
 
 augroup numbertoggle
   autocmd!
@@ -60,11 +67,12 @@ augroup END
 
 
 let g:prettier#autoformat = 0
+
 autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql,*.vue PrettierAsync
 autocmd BufRead,BufNewFile *.md setlocal spell
 
-colorscheme palenight 
-let g:airline_theme = "palenight"
+colorscheme gruvbox 
+let g:airline_theme = "atomic"
 
 "Disable Arrow Keys and Escape
 nnoremap <Up> <Nop>
