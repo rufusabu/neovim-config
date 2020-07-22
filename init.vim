@@ -8,6 +8,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'tweekmonster/django-plus.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/goyo.vim'
+Plug 'calviken/vim-gdscript3'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
@@ -54,6 +55,9 @@ nnoremap <silent> <C-l> :bprevious<CR>
 
 inoremap <C-s> <Esc>:Update<CR>
 "au VimEnter *  NERDTree
+
+"Write Shortcut
+nnoremap <c-s> :w<cr>
 
 set complete+=kspell
 set background=dark
