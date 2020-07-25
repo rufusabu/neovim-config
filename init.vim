@@ -27,6 +27,11 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'flazz/vim-colorschemes'
 Plug 'rbgrouleff/bclose.vim'
+if has('nvim') || has('patch-8.0.902')
+  Plug 'mhinz/vim-signify'
+else
+  Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+endif
 call plug#end()
 
 set nu
