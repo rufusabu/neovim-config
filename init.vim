@@ -7,6 +7,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'tweekmonster/django-plus.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'dense-analysis/ale'
 Plug 'junegunn/goyo.vim'
 Plug 'calviken/vim-gdscript3'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
