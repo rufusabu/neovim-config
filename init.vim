@@ -1,6 +1,7 @@
 call plug#begin()
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-startify'
+Plug 'nvie/vim-flake8'
 Plug 'honza/vim-snippets'
 "Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
