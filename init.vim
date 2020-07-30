@@ -60,6 +60,8 @@ nnoremap <silent> <C-k> :tabn<CR>
 nnoremap <silent> <C-h> :bnext<CR> 
 nnoremap <silent> <C-l> :bprevious<CR> 
 
+nnoremap <silent> <F8> :!autopep8 --in-place %<CR>
+
 inoremap <C-s> <Esc>:Update<CR>
 "au VimEnter *  NERDTree
 
@@ -82,8 +84,8 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql,*.vue PrettierAsync
 autocmd BufRead,BufNewFile *.md setlocal spell
 
-colorscheme gruvbox 
-let g:airline_theme = "atomic"
+colorscheme gruvbox
+let g:airline_theme = "base16_gruvbox_dark_hard"
 
 "Disable Arrow Keys and Escape
 nnoremap <Up> <Nop>
