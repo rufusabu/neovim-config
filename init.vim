@@ -71,6 +71,7 @@ nnoremap <c-s> :w<cr>
 set complete+=kspell
 set background=dark
 set timeoutlen=500
+set mouse=a
 
 augroup numbertoggle
   autocmd!
