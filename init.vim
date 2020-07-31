@@ -87,6 +87,7 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 
 colorscheme gruvbox
 let g:airline_theme = "base16_gruvbox_dark_hard"
+hi Normal guibg=NONE ctermbg=NONE
 
 "Disable Arrow Keys and Escape
 nnoremap <Up> <Nop>
