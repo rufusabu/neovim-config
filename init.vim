@@ -10,6 +10,8 @@ Plug 'tweekmonster/django-plus.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
 Plug 'junegunn/goyo.vim'
+Plug 'ollykel/v-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'calviken/vim-gdscript3'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'vim-airline/vim-airline-themes'
