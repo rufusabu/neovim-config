@@ -13,6 +13,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'ollykel/v-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'calviken/vim-gdscript3'
+Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
