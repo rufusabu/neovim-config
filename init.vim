@@ -88,9 +88,16 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql,*.vue PrettierAsync
 autocmd BufRead,BufNewFile *.md setlocal spell
 
+" Colorscheme settings
+" Function to call when loading colorscheme
+function! s:patch_gruvbox()
+  hi Normal guibg=NONE ctermbg=NONE
+endfunction
+" Call function when gruvbox loaded 
+autocmd! ColorScheme gruvbox call s:patch_gruvbox()
+
 colorscheme gruvbox
 let g:airline_theme = "base16_gruvbox_dark_hard"
-hi Normal guibg=NONE ctermbg=NONE
 
 "Disable Arrow Keys and Escape
 nnoremap <Up> <Nop>
