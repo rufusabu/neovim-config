@@ -113,8 +113,8 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 "" Call function when gruvbox loaded 
 "autocmd! ColorScheme gruvbox call s:patch_gruvbox()
 
-colorscheme spacemacs-theme
-let g:airline_theme = "base16_spacemacs"
+colorscheme badwolf
+let g:airline_theme = "badwolf"
 
 "Disable Arrow Keys and Escape
 nnoremap <Up> <Nop>
