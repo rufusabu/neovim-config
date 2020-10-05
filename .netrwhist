@@ -1,3 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/red/Documents/Febno/engine-prototype-2/Engine/pages/templates/common'
+let g:netrw_dirhist_8='/home/red/Documents/Febno/engine-prototype-2/Engine/pages/templates'
+let g:netrw_dirhist_7='/home/red/Documents/Febno/engine-prototype-2/Engine/pages/templates/common'
+let g:netrw_dirhist_6='/home/red/Documents/Febno/engine-prototype-2/Engine/g_suite'
+let g:netrw_dirhist_5='/home/red/Documents/Febno/engine-prototype-2/Engine'
+let g:netrw_dirhist_4='/home/red'
+let g:netrw_dirhist_3='/home/red/.steam'
+let g:netrw_dirhist_2='/home/red'
 let g:netrw_dirhist_1='/home/red/.config/nvim'

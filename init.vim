@@ -6,13 +6,15 @@ Plug 'nvie/vim-flake8'
 Plug 'honza/vim-snippets'
 "Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'benwainwright/fzf-switch-project'
+Plug 'edkolev/tmuxline.vim'
 Plug 'tweekmonster/django-plus.vim'
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
 Plug 'junegunn/goyo.vim'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'rakr/vim-one'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'ollykel/v-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -45,7 +47,11 @@ else
 endif
 call plug#end()
 
+runtime macros/matchit.vim
+
 set nu
+set matchpairs+=<:>
+"set showtabline=2
 if (has("termguicolors"))
   set termguicolors
 endif
@@ -54,7 +60,7 @@ let g:mapleader = "\<space>"
 "let g:maplocalleader = ','
 let g:asyncrun_open = 6
 let g:user_emmet_leader_key = ','
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = "left"
 let g:airline_powerline_fonts = 1
 "Sliver Searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -83,10 +89,10 @@ inoremap <C-s> <Esc>:Update<CR>
 " au VimEnter *  NERDTree
 
 " Write Shortcut
-nnoremap <c-s> :w<cr>
+nnoremap <C-s> :w<cr>
 
 set complete+=kspell
-set background=dark
+set background=light
 set timeoutlen=500
 set mouse=a
 
@@ -97,7 +103,6 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
-"let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
 let g:prettier#autoformat = 0
 let g:Hexokinase_highlighters = ['virtual']
 
@@ -105,6 +110,8 @@ let g:Hexokinase_highlighters = ['virtual']
 autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql,*.vue PrettierAsync
 autocmd BufRead,BufNewFile *.md setlocal spell
 
+"Set EJS to HTML
+au BufNewFile,BufRead *.ejs set filetype=html
 " Colorscheme settings
 " Function to call when loading colorscheme
 "function! s:patch_gruvbox()
@@ -113,8 +120,10 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 "" Call function when gruvbox loaded 
 "autocmd! ColorScheme gruvbox call s:patch_gruvbox()
 
-colorscheme badwolf
-let g:airline_theme = "badwolf"
+colorscheme one
+let g:airline_theme = "one"
+
+"hi Normal guibg=NONE ctermbg=NONE
 
 "Disable Arrow Keys and Escape
 nnoremap <Up> <Nop>
