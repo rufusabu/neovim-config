@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'vimwiki/vimwiki'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-startify'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
@@ -56,6 +57,11 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+"For vimwiki
+set nocompatible
+filetype plugin on
+syntax on
+
 let g:mapleader = "\<space>"
 "let g:maplocalleader = ','
 let g:asyncrun_open = 6
@@ -79,8 +85,8 @@ nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 
 nnoremap <silent> <C-j> :tabp<CR> 
 nnoremap <silent> <C-k> :tabn<CR> 
-nnoremap <silent> <C-h> :bnext<CR> 
-nnoremap <silent> <C-l> :bprevious<CR> 
+nnoremap <silent> <C-l> :bnext<CR> 
+nnoremap <silent> <C-h> :bprevious<CR> 
 
 nnoremap <silent> <F8> :!autopep8 --in-place %<CR>
 nnoremap <silent> <F9> :!autopep8 --in-place -a %<CR>
@@ -112,16 +118,10 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 
 "Set EJS to HTML
 au BufNewFile,BufRead *.ejs set filetype=html
-" Colorscheme settings
-" Function to call when loading colorscheme
-"function! s:patch_gruvbox()
-  "hi Normal guibg=NONE ctermbg=NONE
-"endfunction
-"" Call function when gruvbox loaded 
-"autocmd! ColorScheme gruvbox call s:patch_gruvbox()
 
-colorscheme one
-let g:airline_theme = "one"
+colorscheme space-vim-dark
+let g:airline_theme = "base16_spacemacs"
+let g:airline#extensions#tabline#enabled = 1
 
 "hi Normal guibg=NONE ctermbg=NONE
 
