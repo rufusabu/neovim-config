@@ -7,9 +7,13 @@ Plug 'nvie/vim-flake8'
 Plug 'honza/vim-snippets'
 "Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'benwainwright/fzf-switch-project'
 Plug 'edkolev/tmuxline.vim'
+Plug 'xolox/vim-session'
+Plug 'xolox/vim-misc'
 Plug 'tweekmonster/django-plus.vim'
+Plug 'jceb/vim-orgmode'
 Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
 Plug 'junegunn/goyo.vim'
@@ -62,8 +66,9 @@ set nocompatible
 filetype plugin on
 syntax on
 
-let g:mapleader = "\<space>"
+
 "let g:maplocalleader = ','
+let g:mapleader = "\<space>"
 let g:asyncrun_open = 6
 let g:user_emmet_leader_key = ','
 let g:NERDTreeWinPos = "left"
@@ -94,11 +99,20 @@ nnoremap <silent> <F9> :!autopep8 --in-place -a %<CR>
 inoremap <C-s> <Esc>:Update<CR>
 " au VimEnter *  NERDTree
 
+"Session Management
+let g:session_directory = "~/.config/nvim/sessions"
+let g:session_autoload = "no"
+let g:session_autosave = "yes"
+let g:session_command_aliases = 1
+nnoremap <leader>so :OpenSession
+nnoremap <leader>ss :SaveSession
+nnoremap <leader>sd :DeleteSession<CR>
+nnoremap <leader>sc :CloseSession<CR>
+
 " Write Shortcut
 nnoremap <C-s> :w<cr>
 
 set complete+=kspell
-set background=light
 set timeoutlen=500
 set mouse=a
 
@@ -109,20 +123,22 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
-let g:prettier#autoformat = 0
 let g:Hexokinase_highlighters = ['virtual']
 
 " Prettier Settings
+let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql,*.vue PrettierAsync
 autocmd BufRead,BufNewFile *.md setlocal spell
 
 "Set EJS to HTML
 au BufNewFile,BufRead *.ejs set filetype=html
 
-colorscheme space-vim-dark
-let g:airline_theme = "base16_spacemacs"
+colorscheme one
+set background=light
+let g:airline_theme = "one"
 let g:airline#extensions#tabline#enabled = 1
 
+" Transparency
 "hi Normal guibg=NONE ctermbg=NONE
 
 "Disable Arrow Keys and Escape
