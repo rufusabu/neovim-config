@@ -1,6 +1,6 @@
 " ~/.config/nvim/sessions/engine.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 07 November 2020 at 19:49:15.
+" Created by session.vim 2.13.1 on 21 December 2020 at 11:51:46.
 " Open this file in Vim and run :source % to restore your session.
 
 if exists('g:syntax_on') != 1 | syntax on | endif
@@ -23,11 +23,12 @@ endif
 set shortmess=aoO
 badd +101 microsoft/views.py
 badd +37 microsoft/templates/microsoft/get_customer_details.html
-badd +53 microsoft/forms.py
+badd +81 microsoft/forms.py
 badd +8 microsoft/templates/microsoft/createSubscription.html
+badd +20 microsoft/urls.py
 argglobal
 %argdel
-edit microsoft/forms.py
+edit microsoft/views.py
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -46,12 +47,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 53 - ((8 * winheight(0) + 15) / 30)
+let s:l = 498 - ((18 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-53
-normal! 02|
+498
+normal! 05|
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
 "   silent exe 'bwipe ' . s:wipebuf

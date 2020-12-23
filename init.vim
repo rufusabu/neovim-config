@@ -134,12 +134,12 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 au BufNewFile,BufRead *.ejs set filetype=html
 
 colorscheme one
-set background=light
+set background=dark
 let g:airline_theme = "one"
 let g:airline#extensions#tabline#enabled = 1
 
 " Transparency
-"hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 
 "Disable Arrow Keys and Escape
 nnoremap <Up> <Nop>
